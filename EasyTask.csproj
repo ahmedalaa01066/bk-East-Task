@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Company\**" />
+    <Content Remove="Features\Company\**" />
+    <EmbeddedResource Remove="Features\Company\**" />
+    <None Remove="Features\Company\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="EPPlus" Version="7.5.2" />
+    <PackageReference Include="FirebaseAdmin" Version="3.2.0" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Hangfire" Version="1.8.18" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.18" />
+    <PackageReference Include="MailKit" Version="4.8.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MimeKit" Version="4.8.0" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="PredicateBuilder" Version="1.0.0" />
+    <PackageReference Include="PredicateExtensions" Version="1.0.0" />
+    <PackageReference Include="PredicateExtensionsCore" Version="1.0.2" />
+    <PackageReference Include="PredicateExtensions" Version="1.0.0" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="7.0.1" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Common\ExternalMembers\DTOs\" />
+    <Folder Include="Features\Common\PauseShifts\Queries\" />
+    <Folder Include="wwwroot\Documents\Candidates\3b0cad5e-d44f-49f8-810f-a8cd164d65cc\" />
+    <Folder Include="wwwroot\Documents\Candidates\4fd38c4d-1077-4c86-b138-184bdf4f093d\" />
+    <Folder Include="wwwroot\Documents\Candidates\5dcc4c05-3941-40b9-9c93-a1eeab91e2fd\" />
+    <Folder Include="wwwroot\Documents\Candidates\6e9064ab-8a0f-4a9c-b67f-3b1a0adc2d28\" />
+    <Folder Include="wwwroot\Documents\Candidates\71c5c092-f59f-4a06-84d0-5b66540d1d7e\" />
+    <Folder Include="wwwroot\Documents\Candidates\77f4c5bc-2cf0-47d0-ae09-b29836603ef1\" />
+    <Folder Include="wwwroot\Documents\Candidates\7c813d8b-2682-481c-a8cc-bd1d6da36a51\" />
+    <Folder Include="wwwroot\Documents\Candidates\7d10e3b8-de8c-4a0d-9fd0-53df81e68698\" />
+    <Folder Include="wwwroot\Documents\Candidates\8494e63a-2678-4a71-97ca-9825dfe3e547\" />
+    <Folder Include="wwwroot\Documents\Candidates\917f2e1f-686f-4e33-8ba3-d590abc8c920\" />
+    <Folder Include="wwwroot\Documents\Candidates\9b6924dd-9f32-4a5d-b8ee-a8b4f60f19bb\" />
+    <Folder Include="wwwroot\Documents\Candidates\bb506451-4135-4ae3-8de4-8f8068d5c3e2\" />
+    <Folder Include="wwwroot\Documents\Candidates\d053eefa-c0f9-4daa-8f41-2ff9134b6da5\" />
+    <Folder Include="wwwroot\Documents\Candidates\ebb05c89-b992-4e4f-a3e1-d678b0c386bc\" />
+    <Folder Include="wwwroot\Documents\Candidates\fb273f16-15fe-4a2e-bf86-906e1a3c33a0\" />
+    <Folder Include="wwwroot\Documents\Departments\01a36be3-1afe-49d9-aa09-3c128456b166\" />
+    <Folder Include="wwwroot\Documents\Departments\22416dc7-4100-4eba-aa6b-cc015540b71f\" />
+    <Folder Include="wwwroot\Documents\Departments\515f0466-655b-4f2b-ad4b-486567ffb50b\" />
+    <Folder Include="wwwroot\Documents\Departments\6aede8eb-0278-4cdd-8bf2-50b4814530f8\" />
+    <Folder Include="wwwroot\Documents\Departments\91196d9c-3cfa-4727-9ab1-e2780a7bdc5b\" />
+    <Folder Include="wwwroot\Documents\Departments\e9423e78-579d-40b5-b4a7-942d9dcdfd90\" />
+    <Folder Include="wwwroot\Documents\Managements\482b3fb6-b99b-4968-9ce9-75546f14d2dd\" />
+    <Folder Include="wwwroot\Documents\Managements\abc25bf0-b0cc-48af-97e8-ef7a8c1e8822\" />
+    <Folder Include="wwwroot\Documents\Managements\b233c5c2-7e13-41b3-8600-c9fb94701cc6\" />
+  </ItemGroup>
+
+</Project>

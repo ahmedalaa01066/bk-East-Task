@@ -1,0 +1,23 @@
+﻿using AutoMapper;
+using FluentValidation;
+using EasyTask.Features.Common.Users.Queries;
+
+namespace EasyTask.Features.Users.GetAllVerifiedStatus
+{
+    public record GetAllVerifiedStatusRequestViewModel(int pageIndex = 1, int pageSize = 100);
+    public class GetAllVerifiedStatusRequestValidator : AbstractValidator<GetAllVerifiedStatusRequestViewModel>
+    {
+        public GetAllVerifiedStatusRequestValidator()
+        {
+
+        }
+
+    }
+    public class GetAllVerifiedStatusEndPointRequestProfile : Profile
+    {
+        public GetAllVerifiedStatusEndPointRequestProfile()
+        {
+            CreateMap<GetAllVerifiedStatusRequestViewModel, GetAllVerifiedStatusQuery>();
+        }
+    }
+}
