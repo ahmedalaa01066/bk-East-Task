@@ -11,6 +11,10 @@
     <Content Remove="Features\Company\**" />
     <EmbeddedResource Remove="Features\Company\**" />
     <None Remove="Features\Company\**" />
+    <Compile Remove="EasyTask.Tests\**" />
+    <Content Remove="EasyTask.Tests\**" />
+    <EmbeddedResource Remove="EasyTask.Tests\**" />
+    <None Remove="EasyTask.Tests\**" />
   </ItemGroup>
 
   <ItemGroup>
