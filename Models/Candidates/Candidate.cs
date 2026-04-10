@@ -18,6 +18,7 @@ using EasyTask.Models.Users;
 using EasyTask.Models.VacationRequests;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using EasyTask.Models.Projects;
 
 namespace EasyTask.Models.Candidates
 {
@@ -78,5 +79,6 @@ namespace EasyTask.Models.Candidates
         public ICollection<Attendance>? Attendances { get; set; }
         public ICollection<PermissionLog>? PermissionLogs { get; set; }
         public ICollection<CandidateTask>? CandidateTasks { get; set; }
+        public ICollection<CandidateProject>? Projects { get; set; }
     }
 }

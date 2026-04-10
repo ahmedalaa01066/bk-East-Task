@@ -1,5 +1,6 @@
 using EasyTask.Common.Enums;
 using EasyTask.Common.Requests;
+using EasyTask.Features.Common.Project.Queries;
 using EasyTask.Features.Projects.Edit_Project;
 using EasyTask.Models.Candidates;
 using Microsoft.EntityFrameworkCore;
@@ -27,8 +28,8 @@ public class GetAllProjectAvailableCandidatesQueryHandler(RequestHandlerBasePara
         
         var managementAndDepartmentIds = managementAndDepartmentIdsResult.Data!; 
         
-        var candidates = await _repository.Get(c => c.ManagementId != managementAndDepartmentIds.ManagementID &&
-                                              c.DepartmentId != managementAndDepartmentIds.DepartmentID)
+        var candidates = await _repository.Get(c => c.ManagementId == managementAndDepartmentIds.ManagementID &&
+                                              c.DepartmentId == managementAndDepartmentIds.DepartmentID)
             .Select(c => new GetAllProjectAvailableCandidatesResponseViewModel
             {
                 Id = c.ID,

@@ -86,4 +86,24 @@ public enum ErrorCode
     [DescriptionAnnotation("you do not have permission to leave ", "you do not have permission to leave ")]
     NotHavePermission,
 
+
+    #region Candidates
+
+    
+
+    #endregion
+
+    #region Projects
+    [DescriptionAnnotation("No candidate IDs were provided", "لم يتم إرسال أي مرشحين")] 
+    NoCandidateIdsProvided = 1001,
+    [DescriptionAnnotation("No available candidates found for this project", "لا يوجد مرشحون متاحون لهذا المشروع")]
+    NoAvailableCandidatesForProject = 1002,
+    [DescriptionAnnotation("Some candidates cannot be assigned to this project", "بعض المرشحين لا يمكن تعيينهم لهذا المشروع")]
+    SomeCandidatesCannotBeAssignedToProject = 1003,
+
+
+    
+
+    #endregion
+
 }

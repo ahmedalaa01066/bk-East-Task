@@ -87,11 +87,12 @@ public class Entities : DbContext
     public DbSet<TaskDependency> TaskDependencies { get; set; }
     public DbSet<CandidateTask> CandidateTasks { get; set; }
     public DbSet<ExternalMemberTask> ExternalMemberTasks { get; set; }
+    public DbSet<CandidateProject> CandidateProjects { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(ConfigurationHelper.GetConnectionString())
-            .LogTo(log => Debug.WriteLine(log), Microsoft.Extensions.Logging.LogLevel.Information)
+            .LogTo(log => Debug.WriteLine(log), LogLevel.Information)
             .EnableSensitiveDataLogging()
             .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
             .ConfigureWarnings(w => w.Ignore(SqlServerEventId.SavepointsDisabledBecauseOfMARS));
@@ -111,10 +112,13 @@ public class Entities : DbContext
         //  modelBuilder.Entity<Client>()
         //.HasIndex(p => new { p.Email, p.Mobile })
         //.IsUnique();
+
         modelBuilder.Entity<CandidateKPI>()
         .HasIndex(ck => new { ck.CandidateId, ck.KPIId })
         .IsUnique();
-
+        
+        modelBuilder.Entity<CandidateProject>()
+        .HasIndex(ck => new { ck.CandidateId, ck.ProjectId })
+        .IsUnique();
     }
-
 }

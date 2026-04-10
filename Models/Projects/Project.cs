@@ -52,6 +52,7 @@ namespace EasyTask.Models.Projects
 
         public ICollection<Candidate>? ScrumMasters { get; set; }
         public ICollection<WorkPackage>? WorkPackages { get; set; }
+        public ICollection<CandidateProject>? Candidates { get; set; }
 
         //TODO :
         //list of stackholders (relation m-m with candidates)

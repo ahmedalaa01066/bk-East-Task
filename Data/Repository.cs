@@ -64,6 +64,21 @@ public class Repository<T> where T : BaseModel, new()
 
         return entities;
     }
+    public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities, CancellationToken ct)
+    {
+        foreach (var entity in entities)
+        {
+            entity.ID = Guid.NewGuid().ToString();
+            entity.CreatedBy = _userState.UserID;
+            entity.CreatedDate = DateTime.Now;
+            entity.UpdatedBy = _userState.UserID;
+            entity.UpdatedDate = DateTime.Now;
+
+            await dbSet.AddAsync(entity, ct);
+        }
+
+        return entities;
+    }
 
     public bool IsDeleted(T entity)
     {
@@ -230,6 +245,11 @@ public class Repository<T> where T : BaseModel, new()
     public void SaveChanges()
     {
         _context.SaveChanges();
+    }
+    
+    public async Task SaveChangesAsync(CancellationToken ct)
+    {
+        await _context.SaveChangesAsync(ct);
     }
 
     private void RemoveIfAttachedToContext(T entity)

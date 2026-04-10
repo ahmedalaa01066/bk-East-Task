@@ -4,6 +4,7 @@ using EasyTask.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EasyTask.Migrations
 {
     [DbContext(typeof(Entities))]
-    partial class EntitiesModelSnapshot : ModelSnapshot
+    [Migration("20260410111946_Add_CandidateProject_M2M_RelationTable")]
+    partial class Add_CandidateProject_M2M_RelationTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1341,8 +1344,7 @@ namespace EasyTask.Migrations
 
                     b.Property<string>("CandidateId")
                         .IsRequired()
-                        .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
@@ -1356,8 +1358,7 @@ namespace EasyTask.Migrations
 
                     b.Property<string>("ProjectId")
                         .IsRequired()
-                        .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UpdatedBy")
                         .IsRequired()
@@ -2212,21 +2213,17 @@ namespace EasyTask.Migrations
 
             modelBuilder.Entity("EasyTask.Models.Projects.CandidateProject", b =>
                 {
-                    b.HasOne("EasyTask.Models.Candidates.Candidate", "Candidate")
+                    b.HasOne("EasyTask.Models.Candidates.Candidate", null)
                         .WithMany("Projects")
                         .HasForeignKey("CandidateId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EasyTask.Models.Projects.Project", "Project")
+                    b.HasOne("EasyTask.Models.Projects.Project", null)
                         .WithMany("Candidates")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Candidate");
-
-                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("EasyTask.Models.Projects.Project", b =>

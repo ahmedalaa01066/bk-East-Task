@@ -1,14 +1,13 @@
 using EasyTask.Common.Requests;
 using EasyTask.Features.Projects.GetAllProjectAvailableCandidates.DTOs;
-using EasyTask.Models.Projects;
 using Microsoft.EntityFrameworkCore;
 
-namespace EasyTask.Features.Projects.GetAllProjectAvailableCandidates.Queries;
+namespace EasyTask.Features.Common.Project.Queries;
 
 public record GetProjectManagementAndDepartmentIdsQuery(string ProjectId) : IRequestBase<ProjectManagementAndDepartmentIdsDTO?>;
 
-public class GetProjectManagementAndDepartmentIdsQueryHandler(RequestHandlerBaseParameters<Project> requestParameters)
-    : RequestHandlerBase<Project,
+public class GetProjectManagementAndDepartmentIdsQueryHandler(RequestHandlerBaseParameters<Models.Projects.Project> requestParameters)
+    : RequestHandlerBase<Models.Projects.Project,
         GetProjectManagementAndDepartmentIdsQuery, ProjectManagementAndDepartmentIdsDTO?>(
         requestParameters)
 {
