@@ -8,10 +8,10 @@ namespace EasyTask.Models.Projects;
 [Table("CandidateProject", Schema = "Projects")]
 public class CandidateProject : BaseModel
 {
-    [NotNull, MaxLength(36)]
+    [NotNull]
     public string CandidateId { get; set; } = null!;
     
-    [NotNull, MaxLength(36)]
+    [NotNull]
     public string ProjectId { get; set; } = null!;
 
     #region Navigation Properties
