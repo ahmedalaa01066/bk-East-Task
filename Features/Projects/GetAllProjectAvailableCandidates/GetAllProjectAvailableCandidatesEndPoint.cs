@@ -11,7 +11,7 @@ public class GetAllProjectAvailableCandidatesEndPoint(
     : EndpointBase<GetAllProjectAvailableCandidatesRequestViewModel,
         List<GetAllProjectAvailableCandidatesResponseViewModel>>(dependencyCollection)
 {
-    [HttpPut]
+    [HttpGet]
     //[TypeFilter(typeof(CustomizedAuthorizeAttribute), Arguments = [Feature.GetAllProjectAvailableCandidates])]
     public async Task<EndPointResponse<List<GetAllProjectAvailableCandidatesResponseViewModel>>> GetAllProjectAvailableCandidates(GetAllProjectAvailableCandidatesRequestViewModel viewModel)
     {

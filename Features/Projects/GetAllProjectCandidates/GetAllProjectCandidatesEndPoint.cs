@@ -11,7 +11,7 @@ public class GetAllProjectCandidatesEndPoint(
     : EndpointBase<GetAllProjectCandidatesRequestVm,
         List<GetAllProjectCandidatesResponseVm>>(dependencyCollection)
 {
-    [HttpPut]
+    [HttpGet]
     //[TypeFilter(typeof(CustomizedAuthorizeAttribute), Arguments = [Feature.GetAllProjectCandidates])]
     public async Task<EndPointResponse<List<GetAllProjectCandidatesResponseVm>>> GetAllProjectCandidates(GetAllProjectCandidatesRequestVm vm)
     {
