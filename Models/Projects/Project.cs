@@ -52,7 +52,13 @@ namespace EasyTask.Models.Projects
 
         public ICollection<Candidate>? ScrumMasters { get; set; }
         public ICollection<WorkPackage>? WorkPackages { get; set; }
-        public ICollection<CandidateProject>? Candidates { get; set; }
+
+        #region Navigation Properties
+
+        // Initialize navigation collections to avoid null-reference issues when queried
+        public ICollection<CandidateProject> Candidates { get; set; } = new List<CandidateProject>();
+
+        #endregion
 
         //TODO :
         //list of stackholders (relation m-m with candidates)

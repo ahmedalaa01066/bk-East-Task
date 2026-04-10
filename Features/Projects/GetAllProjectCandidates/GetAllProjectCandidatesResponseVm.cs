@@ -1,6 +1,6 @@
-﻿namespace EasyTask.Features.Projects.GetAllProjectAvailableCandidates
+﻿namespace EasyTask.Features.Projects.GetAllProjectCandidates
 {
-    public class GetAllProjectAvailableCandidatesResponseViewModel
+    public class GetAllProjectCandidatesResponseVm
     {
         public string Id { get; set; } = null!;
         public string FirstName { get; set; } = null!;

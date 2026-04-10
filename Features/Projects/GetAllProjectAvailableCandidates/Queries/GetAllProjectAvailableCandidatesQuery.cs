@@ -1,7 +1,6 @@
 using EasyTask.Common.Enums;
 using EasyTask.Common.Requests;
 using EasyTask.Features.Common.Project.Queries;
-using EasyTask.Features.Projects.Edit_Project;
 using EasyTask.Models.Candidates;
 using Microsoft.EntityFrameworkCore;
 

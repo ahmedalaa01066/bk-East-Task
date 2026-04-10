@@ -1,5 +1,4 @@
 ﻿using EasyTask.Common.Endpoints;
-using EasyTask.Features.Projects.Edit_Project;
 using EasyTask.Features.Projects.GetAllProjectAvailableCandidates.Queries;
 using EasyTask.Helpers;
 using Microsoft.AspNetCore.Mvc;
